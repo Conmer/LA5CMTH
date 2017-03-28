@@ -1,6 +1,6 @@
 package edu.wmich.cs1120.la5;
 
-public class Area implements IArea {
+public abstract class Area implements IArea {
 
 	@Override
 	public double getBasicEnergyCost() {

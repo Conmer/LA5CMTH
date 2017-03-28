@@ -2,10 +2,15 @@ package edu.wmich.cs1120.la5;
 
 public class Literal implements IExpression {
 
+	int value;
+	
+	Literal(int value) {
+		this.value = value;
+	}
+	
 	@Override
 	public Integer getValue() {
-		// TODO Auto-generated method stub
-		return null;
+		return value;
 	}
 
 }
