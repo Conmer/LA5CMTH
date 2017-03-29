@@ -59,7 +59,6 @@ public class MapCreatorFromDat implements IMapCreator {
 	@Override
 	public void setScanner(TerrainScanner scanner) {
 		this.scanner = scanner;
-
 	}
 
 }
