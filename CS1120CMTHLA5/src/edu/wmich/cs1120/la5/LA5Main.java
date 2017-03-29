@@ -7,8 +7,6 @@ public class LA5Main {
 	public static void main(String[] args) {
 		
 		MainWindow.startGUI();
-		//test
-		//test7
 		
 	}
 

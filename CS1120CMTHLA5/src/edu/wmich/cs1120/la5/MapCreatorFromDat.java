@@ -36,10 +36,13 @@ public class MapCreatorFromDat implements IMapCreator {
 			else
 				terrain[i][j] = new LowArea(basicEnergyCost, elevation, radiation);
 
-			if (operand == '+')
+			/*if (operand == '+')
 				result = (val1 + val2);
 			else
 				result = (val1 - val2);
+			*/
+			
+			result = ExpressionFactory.getExpression(operand, val1, val2).getValue();
 			
 			j++;
 			if (j == 10) {
