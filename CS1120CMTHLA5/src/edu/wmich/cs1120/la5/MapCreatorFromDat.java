@@ -10,7 +10,7 @@ public class MapCreatorFromDat implements IMapCreator {
 	public void scanTerrain(String fileName, int threshold) throws IOException {
 		IArea[][] terrain = new IArea[10][10];
 		RandomAccessFile input = new RandomAccessFile(fileName, "r");
-
+		System.out.println("File Opened.");
 		double basicEnergyCost;
 		double elevation;
 		double radiation;
@@ -23,14 +23,13 @@ public class MapCreatorFromDat implements IMapCreator {
 		int j = 0;
 
 		while (result != -1) {
-			input.seek(result);
+			input.seek(result*34);
 			basicEnergyCost = input.readDouble();
 			elevation = input.readDouble();
 			radiation = input.readDouble();
 			operand = input.readChar();
 			val1 = input.readInt();
 			val2 = input.readInt();
-
 			if (radiation >= 0.5)
 				terrain[i][j] = new HighArea(basicEnergyCost, elevation, radiation);
 			else if (elevation > (threshold * 0.5))
