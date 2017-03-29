@@ -8,7 +8,7 @@ public class LA5Main {
 		
 		MainWindow.startGUI();
 		//test
-		
+		//test7
 		
 	}
 
