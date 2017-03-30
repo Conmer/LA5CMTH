@@ -4,7 +4,7 @@ import java.io.*;
 
 public class MapCreatorFromDat implements IMapCreator {
 
-	TerrainScanner scanner = new TerrainScanner();
+	private TerrainScanner scanner = new TerrainScanner();
 	
 	/**
 	 * reads the binary file into a 10x10 array of type IArea

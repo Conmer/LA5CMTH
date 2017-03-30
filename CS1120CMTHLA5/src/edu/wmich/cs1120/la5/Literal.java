@@ -2,7 +2,7 @@ package edu.wmich.cs1120.la5;
 
 public class Literal implements IExpression {
 
-	int value;
+	private int value;
 	
 	/**
 	 * sets the value of the literal as an integer
