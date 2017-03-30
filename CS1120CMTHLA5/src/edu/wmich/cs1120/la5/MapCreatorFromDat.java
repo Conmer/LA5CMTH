@@ -6,7 +6,11 @@ public class MapCreatorFromDat implements IMapCreator {
 
 	TerrainScanner scanner = new TerrainScanner();
 	
-	@Override
+	/**
+	 * reads the binary file into a 10x10 array of type IArea
+	 * @param fileName name of the binary file that is being read from
+	 * @param threshold threshold of the generated map which changes passable and impassable areas
+	 */
 	public void scanTerrain(String fileName, int threshold) throws IOException {
 		IArea[][] terrain = new IArea[10][10];
 		RandomAccessFile input = new RandomAccessFile(fileName, "r");
@@ -35,12 +39,6 @@ public class MapCreatorFromDat implements IMapCreator {
 				terrain[i][j] = new HighArea(basicEnergyCost, elevation, radiation);
 			else
 				terrain[i][j] = new LowArea(basicEnergyCost, elevation, radiation);
-
-			/*if (operand == '+')
-				result = (val1 + val2);
-			else
-				result = (val1 - val2);
-			*/
 			
 			result = ExpressionFactory.getExpression(operand, val1, val2).getValue();
 			
@@ -54,12 +52,18 @@ public class MapCreatorFromDat implements IMapCreator {
 		getScanner().setTerrain(terrain);
 	}
 
-	@Override
+	/**
+	 * getter for the TerrainScanner object
+	 * @return returns the TerrainScanner object
+	 */
 	public TerrainScanner getScanner() {
 		return scanner;
 	}
 
-	@Override
+	/**
+	 * setter for the TerrainScanner object
+	 * @param scanner an object of TerrainScanner type
+	 */
 	public void setScanner(TerrainScanner scanner) {
 		this.scanner = scanner;
 	}

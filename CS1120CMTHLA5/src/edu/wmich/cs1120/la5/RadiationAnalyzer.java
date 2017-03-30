@@ -4,34 +4,63 @@ import java.util.ArrayList;
 
 public class RadiationAnalyzer implements IRover {
 
-	@Override
-	public ArrayList<IArea> getPath() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	private String analysis;
+	private ArrayList<IArea> path = new ArrayList<>();
 
-	@Override
-	public void setPath(ArrayList<IArea> path) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void analyzePath() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
+	/**
+	 * gets the value of analysis
+	 * 
+	 * @return returns the analysis String
+	 */
 	public String getAnalysis() {
-		// TODO Auto-generated method stub
-		return null;
+		return analysis;
 	}
 
-	@Override
+	/**
+	 * sets the value for analysis
+	 * 
+	 * @param analysis
+	 *            analysis string
+	 */
 	public void setAnalysis(String analysis) {
-		// TODO Auto-generated method stub
+		this.analysis = analysis;
+	}
+
+	/**
+	 * gets the path object
+	 * 
+	 * @return returns the the path object of type IArea
+	 */
+	public ArrayList<IArea> getPath() {
+		return path;
+	}
+
+	/**
+	 * sets the path object
+	 * 
+	 * @param path
+	 *            the ArrayList filled with objects of type IArea
+	 */
+	public void setPath(ArrayList<IArea> path) {
+		this.path = path;
+	}
+	
+	/**
+	 * calculates the total radiation of the path
+	 */
+	public void analyzePath() {
+
+		analysis = "0";
+		double total = 0;
+
+		for (int i = 0; i < path.size(); i++) {
+
+			total = total + path.get(i).getRadiation();
+
+		}
 		
+		analysis = "Total Radiation: " + Double.toString(total);
+
 	}
 
 }

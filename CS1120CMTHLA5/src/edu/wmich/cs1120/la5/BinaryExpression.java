@@ -6,7 +6,13 @@ public class BinaryExpression implements IExpression {
 	private IExpression left;
 	private IExpression right;
 	private int value;
-
+	
+	/**
+	 * constructor that sets values for right/left/op/vaSlue
+	 * @param left the first value of the expression
+	 * @param right the second value of the expression
+	 * @param op the operator that is to be used in the expression
+	 */
 	BinaryExpression(IExpression left, IExpression right, IOperation op) {
 		this.op = op;
 		this.left = left;
@@ -14,7 +20,10 @@ public class BinaryExpression implements IExpression {
 		value = op.perform(left, right);
 	}
 
-	@Override
+	/**
+	 * getter for the value
+	 * @return returns the value as an integer
+	 */
 	public Integer getValue() {
 		return value;
 	}

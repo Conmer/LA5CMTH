@@ -4,11 +4,19 @@ public class Literal implements IExpression {
 
 	int value;
 	
+	/**
+	 * sets the value of the literal as an integer
+	 * @param value value of the integer
+	 */
 	Literal(int value) {
 		this.value = value;
 	}
 	
-	@Override
+
+	/**
+	 * gets the value of the literal as an integer
+	 * @return the value of the literal as an integer
+	 */
 	public Integer getValue() {
 		return value;
 	}

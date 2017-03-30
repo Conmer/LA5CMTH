@@ -4,34 +4,63 @@ import java.util.ArrayList;
 
 public class EnergyAnalyzer implements IRover {
 
-	@Override
+	private String analysis;
+	private ArrayList<IArea> path = new ArrayList<>();
+
+	/**
+	 * gets the path object
+	 * 
+	 * @return returns the the path object of type IArea
+	 */
 	public ArrayList<IArea> getPath() {
-		// TODO Auto-generated method stub
-		return null;
+		return path;
 	}
 
-	@Override
+	/**
+	 * sets the path object
+	 * 
+	 * @param path
+	 *            the ArrayList filled with objects of type IArea
+	 */
 	public void setPath(ArrayList<IArea> path) {
-		// TODO Auto-generated method stub
-		
+		this.path = path;
 	}
-
-	@Override
+	
+	/**
+	 * calculates the total energy consumed on the path
+	 */
 	public void analyzePath() {
-		// TODO Auto-generated method stub
-		
+
+		analysis = "0";
+		double total = 0;
+
+		for (int i = 0; i < path.size(); i++) {
+
+			total = total + path.get(i).calcConsumedEnergy();
+
+		}
+
+		analysis = "Total Energy: " + Double.toString(total);
+
 	}
 
-	@Override
+	/**
+	 * gets the value of analysis
+	 * 
+	 * @return returns the analysis String
+	 */
 	public String getAnalysis() {
-		// TODO Auto-generated method stub
-		return null;
+		return analysis;
 	}
 
-	@Override
+	/**
+	 * sets the value for analysis
+	 * 
+	 * @param analysis
+	 *            analysis string
+	 */
 	public void setAnalysis(String analysis) {
-		// TODO Auto-generated method stub
-		
+		this.analysis = analysis;
 	}
 
 }
